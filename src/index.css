@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-glow: glow 1s linear infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(255, 211, 141, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 10px rgba(255, 247, 234, 0.8));
+  }
+}

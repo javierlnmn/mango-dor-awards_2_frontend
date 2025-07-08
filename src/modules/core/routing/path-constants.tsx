@@ -1,4 +1,4 @@
 export const corePathConstants = {
-    HOME: "/",
-    LOGIN: "/login",
+  HOME: '/',
+  LOGIN: '/login',
 };

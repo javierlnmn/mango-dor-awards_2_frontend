@@ -1,5 +1,5 @@
+import type { ComponentType, ReactNode } from 'react';
 import { motion } from 'motion/react';
-import type { ReactNode, ComponentType } from 'react';
 
 interface PageTransitionProps {
   children: ReactNode;
@@ -29,7 +29,9 @@ const pageTransition = {
   duration: 0.4,
 };
 
-export function withPageTransition<T extends object>(Component: ComponentType<T>) {
+export function withPageTransition<T extends object>(
+  Component: ComponentType<T>
+) {
   return function WrappedComponent(props: T) {
     return (
       <motion.div
@@ -59,4 +61,4 @@ export default function PageTransition({ children }: PageTransitionProps) {
       {children}
     </motion.div>
   );
-} 
+}

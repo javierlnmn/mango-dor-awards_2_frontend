@@ -1,10 +1,15 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import {
+  Route,
+  BrowserRouter as Router,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
 import { AnimatePresence } from 'motion/react';
 import Navigation from '@/modules/core/components/Navigation';
-import { withPageTransition } from '@/ui/PageTransition';
-import Home from '@/modules/core/pages/Home';
 import About from '@/modules/core/pages/About';
 import Awards from '@/modules/core/pages/Awards';
+import Home from '@/modules/core/pages/Home';
+import { withPageTransition } from '@/ui/PageTransition';
 
 const AnimatedHome = withPageTransition(Home);
 const AnimatedAbout = withPageTransition(About);

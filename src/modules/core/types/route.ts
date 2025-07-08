@@ -1,4 +1,4 @@
-import type { ReactElement, ComponentType } from 'react';
+import type { ComponentType, ReactElement } from 'react';
 
 export interface Route {
   title: string;
@@ -6,4 +6,4 @@ export interface Route {
   Icon: ComponentType<any>;
   element: ReactElement;
   children?: Route[];
-} 
+}

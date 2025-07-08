@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom';
-import Navigation from './Navigation';
 import { AnimatePresence } from 'motion/react';
+import Navigation from './Navigation';
 
 export default function AppLayout() {
   return (
     <div className="min-h-screen bg-black">
-      <div className='h-screen w-full flex flex-col'>
+      <div className="h-screen w-full flex flex-col">
         <Navigation />
         <AnimatePresence mode="wait">
           <Outlet />
@@ -13,4 +13,4 @@ export default function AppLayout() {
       </div>
     </div>
   );
-} 
+}

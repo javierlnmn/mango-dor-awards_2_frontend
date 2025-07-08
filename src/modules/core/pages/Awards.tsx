@@ -41,7 +41,7 @@ export default function Awards() {
   ];
 
   return (
-    <main className="min-h-screen overflow-hidden bg-black relative py-20 pt-32">
+    <main className="min-h-screen overflow-hidden relative py-20 pt-32">
       <Spotlight
         gradientFirstClass="bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,_hsla(45,100%,85%,.13)_0,_hsla(45,100%,55%,.04)_50%,_hsla(45,100%,45%,0)_80%)]"
         gradientSecondClass="bg-[radial-gradient(50%_50%_at_50%_50%,_hsla(45,100%,85%,.10)_0,_hsla(45,100%,55%,.03)_80%,_transparent_100%)]"

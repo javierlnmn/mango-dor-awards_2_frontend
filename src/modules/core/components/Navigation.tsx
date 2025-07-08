@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
+import logo from '@/assets/logo.png';
 
 export default function Navigation() {
   const location = useLocation();
@@ -15,7 +16,7 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto px-8 h-full flex items-center">
         <div className="flex items-center justify-between w-full">
           <Link to="/" className="text-2xl font-bold text-white">
-            Mango D'Or
+            <img src={logo} alt="Mango D'Or Awards" className="h-15 w-auto" />
           </Link>
 
           <div className="flex items-center space-x-8">

@@ -2,7 +2,7 @@ import { Spotlight } from '@/ui/Spotlight';
 
 export default function About() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black relative pt-20">
+    <main className="min-h-screen flex flex-col items-center justify-center overflow-hidden relative pt-20">
       <Spotlight
         gradientFirstClass="bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,_hsla(210,100%,85%,.13)_0,_hsla(210,100%,55%,.04)_50%,_hsla(210,100%,45%,0)_80%)]"
         gradientSecondClass="bg-[radial-gradient(50%_50%_at_50%_50%,_hsla(210,100%,85%,.10)_0,_hsla(210,100%,55%,.03)_80%,_transparent_100%)]"

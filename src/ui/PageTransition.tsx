@@ -1,5 +1,5 @@
 import type { ComponentType, ReactNode } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion'; // fix: make sure it's 'framer-motion', not 'motion/react'
 
 interface PageTransitionProps {
   children: ReactNode;
@@ -8,25 +8,23 @@ interface PageTransitionProps {
 const pageVariants = {
   initial: {
     opacity: 0,
-    y: 20,
-    scale: 0.95,
+    y: 100,
   },
   in: {
     opacity: 1,
     y: 0,
-    scale: 1,
   },
   out: {
     opacity: 0,
-    y: -20,
-    scale: 1.05,
+    y: -100,
   },
 };
 
-const pageTransition = {
-  type: 'tween' as const,
-  ease: 'anticipate' as const,
-  duration: 0.4,
+const transition = {
+  type: 'spring' as const,
+  damping: 20,
+  stiffness: 100,
+  duration: 0.6,
 };
 
 export function withPageTransition<T extends object>(
@@ -34,31 +32,35 @@ export function withPageTransition<T extends object>(
 ) {
   return function WrappedComponent(props: T) {
     return (
-      <motion.div
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
-        transition={pageTransition}
-        className="w-full"
-      >
-        <Component {...props} />
-      </motion.div>
+      <div className="fixed inset-0 overflow-hidden">
+        <motion.div
+          initial="initial"
+          animate="in"
+          exit="out"
+          variants={pageVariants}
+          transition={transition}
+          className="w-full h-full overflow-y-auto"
+        >
+          <Component {...props} />
+        </motion.div>
+      </div>
     );
   };
 }
 
 export default function PageTransition({ children }: PageTransitionProps) {
   return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-      className="w-full"
-    >
-      {children}
-    </motion.div>
+    <div className="fixed inset-0 overflow-hidden">
+      <motion.div
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={transition}
+        className="w-full h-full overflow-y-auto"
+      >
+        {children}
+      </motion.div>
+    </div>
   );
 }

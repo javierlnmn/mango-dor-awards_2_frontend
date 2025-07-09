@@ -4,7 +4,7 @@ import { Spotlight } from '@/ui/Spotlight';
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-4 items-center justify-center relative pt-20">
+    <main className="flex flex-col gap-4 items-center justify-center relative">
       <Spotlight
         gradientFirstClass="bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,_hsla(30,100%,85%,.13)_0,_hsla(30,100%,55%,.04)_50%,_hsla(30,100%,45%,0)_80%)]"
         gradientSecondClass="bg-[radial-gradient(50%_50%_at_50%_50%,_hsla(30,100%,85%,.10)_0,_hsla(30,100%,55%,.03)_80%,_transparent_100%)]"

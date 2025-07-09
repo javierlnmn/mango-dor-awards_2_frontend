@@ -1,9 +1,8 @@
-import type { ComponentType, ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
-export interface Route {
-  title: string;
-  pathname: string;
-  Icon: ComponentType<any>;
+export interface RouteConfig {
+  path: string;
+  showInNavigation?: boolean;
   element: ReactElement;
-  children?: Route[];
+  title?: string;
 }

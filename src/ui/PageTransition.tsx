@@ -27,10 +27,10 @@ const transition = {
   duration: 0.6,
 };
 
-export function withPageTransition<T extends object>(
+export const withPageTransition = <T extends object>(
   Component: ComponentType<T>
-) {
-  return function WrappedComponent(props: T) {
+) => {
+  const WrappedComponent = (props: T) => {
     return (
       <div className="fixed inset-0 overflow-hidden">
         <motion.div
@@ -46,9 +46,10 @@ export function withPageTransition<T extends object>(
       </div>
     );
   };
-}
+  return WrappedComponent;
+};
 
-export default function PageTransition({ children }: PageTransitionProps) {
+const PageTransition = ({ children }: PageTransitionProps) => {
   return (
     <div className="fixed inset-0 overflow-hidden">
       <motion.div
@@ -63,4 +64,6 @@ export default function PageTransition({ children }: PageTransitionProps) {
       </motion.div>
     </div>
   );
-}
+};
+
+export default PageTransition;

@@ -1,8 +1,9 @@
 import logo from '@/assets/logo.png';
+import Button from '@/ui/Button';
 import { Card } from '@/ui/Card';
 import { Spotlight } from '@/ui/Spotlight';
 
-export default function Home() {
+const Home = () => {
   return (
     <main className="flex flex-col gap-4 items-center justify-center relative">
       <Spotlight
@@ -57,7 +58,12 @@ export default function Home() {
             </p>
           </Card>
         </div>
+        <Button size="md" style="glass">
+          Click me
+        </Button>
       </div>
     </main>
   );
-}
+};
+
+export default Home;

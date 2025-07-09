@@ -3,7 +3,7 @@ import { AnimatePresence } from 'motion/react';
 import Navigation from '@/modules/core/components/Navigation';
 import { coreRoutesConfig } from '../routing/routes-config';
 
-export default function AppLayout() {
+const AppLayout = () => {
   const location = useLocation();
 
   return (
@@ -26,4 +26,6 @@ export default function AppLayout() {
       </div>
     </div>
   );
-}
+};
+
+export default AppLayout;

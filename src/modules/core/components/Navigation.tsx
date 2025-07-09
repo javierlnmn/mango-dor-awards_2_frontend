@@ -1,9 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import logo from '@/assets/logo.png';
+import AuthNavLink from '@/modules/auth/components/AuthNavLink';
 import { navigationCoreRoutes } from '@/modules/core/routing/routes-config';
 
-export default function Navigation() {
+const Navigation = () => {
   const location = useLocation();
 
   const navigationRoutes = [...navigationCoreRoutes];
@@ -34,9 +35,12 @@ export default function Navigation() {
                 )}
               </Link>
             ))}
+            <AuthNavLink />
           </div>
         </div>
       </div>
     </nav>
   );
-}
+};
+
+export default Navigation;

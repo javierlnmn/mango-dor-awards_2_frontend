@@ -1,6 +1,3 @@
-import logo from '@/assets/logo.png';
-import Button from '@/ui/Button';
-import { Card } from '@/ui/Card';
 import { Spotlight } from '@/ui/Spotlight';
 
 const Home = () => {
@@ -21,14 +18,15 @@ const Home = () => {
       />
       <div className="h-screen w-screen flex items-center justify-center">
         <div className="flex-1 flex items-center justify-center">
-          <img
+          {/* <img
             src={logo}
             alt="Mango D'Or Awards"
             className="transform -translate-y-20 max-w-[500px] w-full h-auto animate-glow"
-          />
+          /> */}
+          <p>test</p>
         </div>
       </div>
-      <div className="max-w-[1200px] mb-4 w-full mx-auto">
+      {/* <div className="max-w-[1200px] mb-4 w-full mx-auto">
         <div className="grid grid-cols-3 gap-4">
           <Card>
             <h2 className="text-white text-2xl font-bold">Mango D'Or Awards</h2>
@@ -61,7 +59,7 @@ const Home = () => {
         <Button size="md" style="glass">
           Click me
         </Button>
-      </div>
+      </div> */}
     </main>
   );
 };

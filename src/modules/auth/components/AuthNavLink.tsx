@@ -10,20 +10,23 @@ const AuthNavLink = () => {
 
   if (user.token) {
     return (
-      <Link className="relative" to={authPathConstants.LOGOUT}>
-        <MdLogout
-          className="text-white/80 hover:text-white transition-colors duration-200"
-          size={25}
-        />
-        {location.pathname === authPathConstants.LOGOUT && (
-          <motion.div
-            layoutId="activeTab"
-            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-orange-400"
-            initial={false}
-            transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+      <div className="flex items-center gap-2">
+        <p>{user.username}</p>
+        <Link className="relative" to={authPathConstants.LOGOUT}>
+          <MdLogout
+            className="text-white/80 hover:text-white transition-colors duration-200"
+            size={25}
           />
-        )}
-      </Link>
+          {location.pathname === authPathConstants.LOGOUT && (
+            <motion.div
+              layoutId="activeTab"
+              className="absolute -bottom-1 left-0 right-0 h-0.5 bg-orange-400"
+              initial={false}
+              transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+            />
+          )}
+        </Link>
+      </div>
     );
   }
 

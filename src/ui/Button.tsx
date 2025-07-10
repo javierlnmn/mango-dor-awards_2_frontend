@@ -7,6 +7,8 @@ interface ButtonProps {
   size?: 'sm' | 'md' | 'lg';
   style?: 'primary' | 'secondary' | 'glass';
   onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
 
 const Button = ({
@@ -14,11 +16,18 @@ const Button = ({
   className,
   size = 'md',
   style = 'primary',
+  type = 'button',
+  disabled = false,
+  onClick,
 }: ButtonProps) => {
   return (
     <button
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
       className={cn(
         'rounded-lg font-medium transition-colors text-white cursor-pointer',
+        'disabled:opacity-50 disabled:cursor-not-allowed',
         style === 'primary' && 'bg-amber-500 hover:bg-amber-600',
         // style === 'secondary' && 'bg-amber-500 hover:bg-amber-600',
         style === 'glass' &&

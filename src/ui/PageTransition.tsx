@@ -39,7 +39,7 @@ export const withPageTransition = <T extends object>(
           exit="out"
           variants={pageVariants}
           transition={transition}
-          className="w-full h-full overflow-y-auto"
+          className="w-full h-full overflow-y-auto overflow-x-hidden"
         >
           <Component {...props} />
         </motion.div>
@@ -58,7 +58,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
         exit="out"
         variants={pageVariants}
         transition={transition}
-        className="w-full h-full overflow-y-auto"
+        className="w-full h-full overflow-y-auto overflow-x-hidden"
       >
         {children}
       </motion.div>

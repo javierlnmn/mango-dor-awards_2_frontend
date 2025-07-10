@@ -10,9 +10,13 @@ interface AuthStore {
 }
 
 const emptyUser: UserData = {
+  id: 0,
   username: '',
-  role: '',
   token: '',
+  first_name: '',
+  last_name: '',
+  date_joined: '',
+  last_login: '',
 };
 
 export const useAuthStore = create<AuthStore>()(

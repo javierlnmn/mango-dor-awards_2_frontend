@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
+import { authPathConstants } from '@/modules/auth/routing/path-constants';
 import { useAuthStore } from '@/modules/auth/stores/authStore';
-import { corePathConstants } from '@/modules/core/routing/path-constants';
 
 const Logout = () => {
   const { logout } = useAuthStore();
@@ -10,7 +10,7 @@ const Logout = () => {
     logout();
   }, []);
 
-  return <Navigate to={corePathConstants.HOME} />;
+  return <Navigate to={authPathConstants.LOGIN} />;
 };
 
 export default Logout;

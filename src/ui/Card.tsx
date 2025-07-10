@@ -6,7 +6,7 @@ interface CardProps {
   children: React.ReactNode;
 }
 
-export const Card = ({
+const Card = ({
   containerClassName,
   contentClassName,
   children,
@@ -24,3 +24,5 @@ export const Card = ({
     </div>
   );
 };
+
+export default Card;

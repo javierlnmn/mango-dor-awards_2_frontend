@@ -8,7 +8,7 @@ const AuthNavLink = () => {
   const { user } = useAuthStore();
   const location = useLocation();
 
-  if (user.username) {
+  if (user.token) {
     return (
       <Link className="relative" to={authPathConstants.LOGOUT}>
         <MdLogout

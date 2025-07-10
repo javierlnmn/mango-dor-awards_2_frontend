@@ -31,8 +31,8 @@ const Home = () => {
       <div className="max-w-[1200px] mb-4 w-full mx-auto">
         <div className="grid grid-cols-3 gap-4">
           <Card>
-            <h2 className="text-white text-2xl font-bold">Mango D'Or Awards</h2>
-            <p className="text-white text-sm">
+            <h2 className="text-2xl font-bold">Mango D'Or Awards</h2>
+            <p className="text-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
               quos. Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing
@@ -44,15 +44,15 @@ const Home = () => {
             </p>
           </Card>
           <Card>
-            <h2 className="text-white text-2xl font-bold">Mango D'Or Awards</h2>
-            <p className="text-white text-sm">
+            <h2 className="text-2xl font-bold">Mango D'Or Awards</h2>
+            <p className="text-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
               quos.
             </p>
           </Card>
           <Card>
-            <h2 className="text-white text-2xl font-bold">Mango D'Or Awards</h2>
-            <p className="text-white text-sm">
+            <h2 className="text-2xl font-bold">Mango D'Or Awards</h2>
+            <p className="text-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
               quos.
             </p>

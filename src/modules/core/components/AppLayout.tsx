@@ -10,7 +10,7 @@ const AppLayout = () => {
   const allRoutes = [...coreRoutesConfig, ...authRoutesConfig];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-neutral-900 to-neutral-950">
+    <div className="min-h-screen text-white bg-gradient-to-b from-neutral-900 to-neutral-950">
       <div className="h-screen w-full flex flex-col">
         <Navigation />
         <div className="flex-1 relative">

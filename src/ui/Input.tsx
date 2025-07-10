@@ -40,7 +40,7 @@ const Input = ({
         className={cn(
           'w-full px-4 py-3 rounded-lg',
           'bg-white/10 backdrop-blur-md border border-white/20',
-          'text-white placeholder-white/50',
+          'placeholder-white/50',
           'focus:outline-none focus:ring-2 focus:ring-orange-400/50 focus:border-orange-400/50',
           'transition-all duration-200',
           'hover:bg-white/15 hover:border-white/30',

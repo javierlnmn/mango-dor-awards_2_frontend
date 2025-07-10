@@ -13,7 +13,7 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-sm border-b border-white/10">
       <div className="max-w-6xl mx-auto px-8 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold text-white">
+          <Link to="/" className="text-2xl font-bold">
             <img src={logo} alt="Mango D'Or Awards" className="h-14 w-auto" />
           </Link>
 

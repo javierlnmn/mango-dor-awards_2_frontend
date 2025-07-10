@@ -26,7 +26,7 @@ const Button = ({
       disabled={disabled}
       onClick={onClick}
       className={cn(
-        'rounded-lg font-medium transition-colors text-white cursor-pointer',
+        'rounded-lg font-medium transition-colors cursor-pointer',
         'disabled:opacity-50 disabled:cursor-not-allowed',
         style === 'primary' && 'bg-amber-500 hover:bg-amber-600',
         // style === 'secondary' && 'bg-amber-500 hover:bg-amber-600',

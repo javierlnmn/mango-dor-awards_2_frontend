@@ -11,7 +11,7 @@ const AuthNavLink = () => {
   if (user.token) {
     return (
       <div className="flex items-center gap-2">
-        <p>{user.username}</p>
+        <p className="italic">{user.username}</p>
         <Link className="relative" to={authPathConstants.LOGOUT}>
           <MdLogout
             className="text-white/80 hover:text-white transition-colors duration-200"

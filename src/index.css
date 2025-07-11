@@ -19,3 +19,15 @@ html {
     filter: drop-shadow(0 0 10px rgba(255, 247, 234, 0.8));
   }
 }
+
+/* Odometer fast animation */
+.odometer-fast .odometer.odometer-animating-up .odometer-ribbon-inner,
+.odometer-fast .odometer.odometer-animating-down .odometer-ribbon-inner {
+  transition: transform 1s ease-in-out !important;
+}
+
+.odometer-fast
+  .odometer.odometer-animating-down.odometer-animating
+  .odometer-ribbon-inner {
+  transition: transform 1s ease-in-out !important;
+}

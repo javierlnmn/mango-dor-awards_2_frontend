@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import logo from '@/assets/logo.png';
 import { useLogin } from '@/modules/auth/queries/authQueries';
 import type { LoginFormData } from '@/modules/auth/types/login';
 import Button from '@/ui/Button';
 import Input from '@/ui/Input';
 import { Spotlight } from '@/ui/Spotlight';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();

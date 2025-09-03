@@ -26,7 +26,7 @@ const Steps = ({ steps, className }: StepsProps) => {
               {!isLast && (
                 <div
                   className={cn(
-                    'absolute left-4 top-8 w-0.5 h-16 transition-colors duration-300',
+                    'absolute left-[15px] h-full top-8 w-0.5 transition-colors duration-300 bottom-0',
                     step.status === 'completed'
                       ? 'bg-gradient-to-b from-amber-400 to-amber-500'
                       : 'bg-white/20'

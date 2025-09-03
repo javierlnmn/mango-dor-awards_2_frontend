@@ -1,11 +1,16 @@
+import { Link } from 'react-router-dom';
 import logo from '@/assets/logo.png';
+import { authPathConstants } from '@/modules/auth/routing/path-constants';
+import { useAuthStore } from '@/modules/auth/stores/authStore';
+import { useSiteParamsQuery } from '@/modules/core/queries/commonQueries';
 import Card from '@/ui/Card';
 import Countdown from '@/ui/Countdown';
 import { Spotlight } from '@/ui/Spotlight';
 import Steps from '@/ui/Steps';
 
 const Home = () => {
-  const revealDate = new Date('2025-12-20T20:00:00');
+  const { siteParamsQuery } = useSiteParamsQuery();
+  const { isAuthenticated } = useAuthStore();
 
   const votingSteps = [
     {
@@ -35,8 +40,7 @@ const Home = () => {
     {
       id: 4,
       title: 'Resultados',
-      description:
-        'Espera a la revelación oficial de los ganadores el día de la ceremonia.',
+      description: 'Llegado el día, podrás ver los resultados de la votación.',
       status: 'upcoming' as const,
       icon: '🏆',
     },
@@ -138,11 +142,23 @@ const Home = () => {
             </span>
           </h2>
           <p className="text-white/70 mb-8 text-lg">
-            La ceremonia oficial será el{' '}
-            <span className="font-bold text-amber-300">20 de Diciembre</span>
+            La revelación de los ganadores será el{' '}
+            <span className="font-bold text-amber-300">
+              {siteParamsQuery.data?.winners_reveal_date?.toLocaleDateString(
+                'es-ES',
+                {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                }
+              )}
+            </span>
           </p>
 
-          <Countdown targetDate={revealDate} className="max-w-2xl mx-auto" />
+          <Countdown
+            targetDate={siteParamsQuery.data?.winners_reveal_date || new Date()}
+            className="max-w-2xl mx-auto"
+          />
 
           <div className="mt-8 pt-6">
             <p className="text-white/60 text-sm">
@@ -152,23 +168,25 @@ const Home = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="text-center">
-          <Card contentClassName="text-center py-8 px-6">
-            <h2 className="text-2xl font-bold text-white mb-4">
-              ¿Listo para votar?
-            </h2>
-            <p className="text-white/70 mb-6">
-              Únete a los miles de votantes que ya han elegido a sus favoritos
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-bold rounded-lg hover:from-amber-400 hover:to-amber-500 transition-all duration-300 shadow-lg hover:shadow-amber-500/25">
-                Iniciar Sesión
-              </button>
-              <button className="px-8 py-3 bg-white/10 backdrop-blur-md border border-amber-400/50 text-amber-300 font-bold rounded-lg hover:bg-white/20 hover:border-amber-400 transition-all duration-300">
-                Ver Categorías
-              </button>
-            </div>
-          </Card>
+        <section className="text-center flex flex-col gap-4">
+          <h2 className="text-5xl font-bold text-white mb-4">
+            ¿Listo para votar?
+          </h2>
+          {isAuthenticated ? (
+            <Link
+              to="/categories"
+              className="px-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-bold rounded-lg hover:from-amber-400 hover:to-amber-500 transition-all duration-300 shadow-lg hover:shadow-amber-500/25"
+            >
+              Ver Categorías
+            </Link>
+          ) : (
+            <Link
+              to={`${authPathConstants.LOGIN}`}
+              className="px-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-bold rounded-lg hover:from-amber-400 hover:to-amber-500 transition-all duration-300 shadow-lg hover:shadow-amber-500/25"
+            >
+              Iniciar Sesión
+            </Link>
+          )}
         </section>
       </div>
     </main>

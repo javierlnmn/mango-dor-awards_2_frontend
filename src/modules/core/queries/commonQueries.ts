@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { getSiteParams } from '@/modules/core/services/commonService';
 
-export const useSiteParams = () => {
+export const useSiteParamsQuery = () => {
   const siteParamsQuery = useQuery({
     queryKey: ['siteParams'],
     queryFn: getSiteParams,

@@ -1,12 +1,13 @@
-import { Link } from 'react-router-dom';
 import logo from '@/assets/logo.png';
 import { authPathConstants } from '@/modules/auth/routing/path-constants';
 import { useAuthStore } from '@/modules/auth/stores/authStore';
 import { useSiteParamsQuery } from '@/modules/core/queries/commonQueries';
+import { corePathConstants } from '@/modules/core/routing/path-constants';
 import Card from '@/ui/Card';
 import Countdown from '@/ui/Countdown';
 import { Spotlight } from '@/ui/Spotlight';
 import Steps from '@/ui/Steps';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const { siteParamsQuery } = useSiteParamsQuery();
@@ -89,13 +90,15 @@ const Home = () => {
 
         {/* Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-          <Card contentClassName="text-center flex flex-col gap-3 items-center">
-            <h4 className="text-2xl font-bold text-amber-300">Candidatos</h4>
-            <p className="text-white/80">
-              Los <span className="font-bold text-amber-200">candidatos</span>{' '}
-              son los que se han postulado para ser nominados a los premios.
-            </p>
-          </Card>
+          <Link to={corePathConstants.CANDIDATES}>
+            <Card contentClassName="text-center flex flex-col gap-3 items-center cursor-pointer hover:scale-105 transition-transform">
+              <h4 className="text-2xl font-bold text-amber-300">Candidatos</h4>
+              <p className="text-white/80">
+                Los <span className="font-bold text-amber-200">candidatos</span>{' '}
+                son los que se han postulado para ser nominados a los premios.
+              </p>
+            </Card>
+          </Link>
           <Card contentClassName="text-center flex flex-col gap-3 items-center">
             <h4 className="text-2xl font-bold text-amber-400">Categorías</h4>
             <p className="text-white/80">

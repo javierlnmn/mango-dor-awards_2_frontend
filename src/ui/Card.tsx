@@ -1,7 +1,7 @@
 'use client';
 
-import { cn } from '@/lib/cn';
 import { useRef, useState } from 'react';
+import { cn } from '@/lib/cn';
 
 interface CardProps {
   containerClassName?: string;
